@@ -1,0 +1,12 @@
+= form_tag "/articles", method: :get
+  = text_field_tag :search
+  = submit_tag "Search"
+
+- if @response
+  - @response['data'].each do |article|
+    hr
+    h1 = article['title']
+    p = article['description']
+    p  = article['published_at'].to_date
+    p  = article['author']
+    hr
